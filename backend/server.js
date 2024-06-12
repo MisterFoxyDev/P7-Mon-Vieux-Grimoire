@@ -1,5 +1,18 @@
 const http = require("http");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+dotenv.config({ path: "./config.env" });
 const app = require("./app");
+
+const DB = process.env.DATABASE.replace(
+  "<PASSWORD>",
+  process.env.DATABASE_PASSWORD,
+);
+
+mongoose
+  .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("connexion à MongoDB réussie !"))
+  .catch(() => console.log("La connexion à MongoDG a échoué !"));
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10);

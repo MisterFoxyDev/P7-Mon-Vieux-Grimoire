@@ -1,5 +1,6 @@
 const Book = require("../models/Book");
 const fs = require("fs");
+const path = require("path");
 
 //CREATE
 exports.createBook = (req, res) => {
@@ -37,13 +38,13 @@ exports.getBestRating = (req, res) => {
     .sort({ averageRating: -1 })
     .limit(3)
     .then((books) => {
-      console.log("🚀 ~ books:", books)
-      return res.status(200).json(books)
+      console.log("🚀 ~ books:", books);
+      return res.status(200).json(books);
     })
     .catch((err) => {
-      console.log("🚀 ~ err:", err)
-      return res.status(404).json({ err })
-    })
+      console.log("🚀 ~ err:", err);
+      return res.status(404).json({ err });
+    });
 };
 //UPDATE
 exports.modifyBook = (req, res) => {
@@ -114,6 +115,7 @@ exports.addRating = (req, res) => {
     .catch((err) => res.status(404).json({ err }));
 };
 //DELETE
+
 exports.deleteBook = (req, res) => {
   Book.findOne({ _id: req.params.id })
     .then((book) => {
@@ -123,7 +125,9 @@ exports.deleteBook = (req, res) => {
           .json({ message: "Vous n'êtes pas autorisé à supprimer ce livre" });
       } else {
         const filename = book.imageUrl.split("/images/")[1];
-        fs.unlink(`images/${filename}`, () => {
+        const sanitizedFilename = path.basename(filename);
+        const filePath = path.join("images", sanitizedFilename);
+        fs.unlink(filePath, () => {
           Book.deleteOne({ _id: req.params.id })
             .then(() => res.status(200).json({ message: "Livre supprimé !" }))
             .catch((err) => res.status(401).json({ err }));

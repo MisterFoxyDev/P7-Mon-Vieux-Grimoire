@@ -7,13 +7,6 @@ const userRoutes = require("./routes/user");
 const app = express();
 
 //CONNEXION BD
-mongoose
-  .connect(
-    "mongodb+srv://hugothomas90:kTLruGHm4VlhMxeC@cluster0.y3tdvi8.mongodb.net/",
-    { useNewUrlParser: true, useUnifiedTopology: true },
-  )
-  .then(() => console.log("connexion à MongoDB réussie !"))
-  .catch(() => console.log("La connexion à MongoDG a échoué !"));
 
 //Avec ce middleware, Express prend toutes les requêtes qui ont comme Content-Type application/json et met à disposition leur body directement sur l'objet req.
 app.use(express.json());

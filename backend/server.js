@@ -1,4 +1,3 @@
-const http = require("http");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
@@ -47,8 +46,6 @@ const errorHandler = (error) => {
       throw error;
   }
 };
-
-
 
 app.on("error", errorHandler);
 app.on("listening", () => {

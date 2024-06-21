@@ -5,6 +5,7 @@ const path = require("path");
 //CREATE
 exports.createBook = (req, res) => {
   const bookObj = JSON.parse(req.body.book);
+  console.log("🚀 ~ bookObj:", req.body)
   delete bookObj._id;
   delete bookObj._userId;
   const book = new Book({
@@ -26,7 +27,7 @@ exports.getOneBook = (req, res) => {
     .then((book) => {
       return res.status(200).json(book);
     })
-    .catch((err) => res.status(404).json({ err }));
+    .catch((err) => res.status(400).json({ err }));
 };
 exports.getAllBooks = (req, res) => {
   Book.find()

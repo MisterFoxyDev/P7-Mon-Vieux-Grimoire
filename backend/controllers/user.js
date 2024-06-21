@@ -12,7 +12,7 @@ exports.signup = (req, res) => {
       });
       user
         .save()
-        .then(() => res.status(201).json({ message: "Utilisateur créé !" }))
+        .then(() => res.status(201))
         .catch((err) => res.status(400).json({ err }));
     })
     .catch((err) => res.status(500).json({ err }));

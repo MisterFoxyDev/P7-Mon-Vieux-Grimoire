@@ -43,7 +43,7 @@ const resizeAndCompressImage = (req, res, next) => {
   sharp(req.file.buffer)
     .resize(404, 568, {
       fit: sharp.fit.inside,
-      withoutEnlargement: true,
+      withoutEnlargement: false,
     })
     .webp({ quality: 90 })
     .toFile(`images/${req.file.filename}`)

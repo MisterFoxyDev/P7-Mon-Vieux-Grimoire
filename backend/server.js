@@ -10,7 +10,7 @@ const DB = process.env.DATABASE.replace(
 );
 
 mongoose
-  .connect(DB, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(DB)
   .then(() => console.log("connexion à MongoDB réussie !"))
   .catch(() => console.log("La connexion à MongoDG a échoué !"));
 

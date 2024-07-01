@@ -42,9 +42,16 @@ function SignIn({ setUser }) {
         navigate('/');
       }
     } catch (err) {
-      console.log(err);
-      setNotification({ error: true, message: err.message });
-      console.log('Some error occured during signing in: ', err);
+      if (err.response && err.response.status === 401) {
+        setNotification({
+          error: true,
+          message: 'Email ou mot de passe incorrect',
+        });
+      } else {
+        console.log(err);
+        setNotification({ error: true, message: err.message });
+        console.log('Some error occured during signing in: ', err);
+      }
     } finally {
       setIsLoading(false);
     }

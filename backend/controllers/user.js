@@ -11,14 +11,11 @@ exports.signup = (req, res) => {
   if (!validateEmail(req.body.email)) {
     return res.status(400).json({ message: "Adresse email invalide." });
   }
-  // Vérifier si l'utilisateur existe déjà
   User.findOne({ email: req.body.email })
     .then(user => {
       if (user) {
-        // Si l'utilisateur existe déjà, renvoyer un code 409 (Conflit)
         return res.status(409).json({ message: "L'utilisateur existe déjà." });
       }
-      // Si l'utilisateur n'existe pas, procéder à la création
       bcrypt
         .hash(req.body.password, 10)
         .then(hash => {
@@ -44,7 +41,7 @@ exports.login = (req, res) => {
       if (user === null) {
         res
           .status(401)
-          .json({ message: "Identifiant ou mot de passe incorrect" });
+          .json({ message: "Email ou mot de passe incorrect" });
       } else {
         bcrypt
           .compare(req.body.password, user.password)
@@ -52,7 +49,7 @@ exports.login = (req, res) => {
             if (!valid) {
               res
                 .status(401)
-                .json({ message: "Identifiant ou mot de passe incorrect" });
+                .json({ message: "Email ou mot de passe incorrect" });
             } else {
               res.status(200).json({
                 userId: user._id,

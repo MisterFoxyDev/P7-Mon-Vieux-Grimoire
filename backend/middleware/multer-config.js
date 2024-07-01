@@ -10,22 +10,6 @@ const MIME_TYPES = {
   "image/tiff": "tiff",
 };
 
-<<<<<<< HEAD
-// const storage = multer.diskStorage({
-//   destination: (req, file, callback) => {
-//     callback(null, "images");
-//   },
-//   filename: (req, file, callback) => {
-//     const name = file.originalname.split(" ").join("_");
-//     const extension = MIME_TYPES[file.mimetype];
-//     callback(null, name + Date.now() + "." + extension);
-//   },
-// });
-
-// module.exports = multer({ storage }).single("image");
-
-=======
->>>>>>> 52b514e2779dc75e315512acf679c1205e55e938
 const storage = multer.memoryStorage();
 
 const fileFilter = (req, file, callback) => {

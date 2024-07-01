@@ -6,7 +6,6 @@ const multer = require("../middleware/multer-config");
 
 //CREATE
 router.post("/", auth, multer.upload.single("image"), multer.resizeAndCompressImage, booksCtrl.createBook);
-
 //READ
 router.get("/", booksCtrl.getAllBooks);
 router.get("/bestrating", booksCtrl.getBestRating);

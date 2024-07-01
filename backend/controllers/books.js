@@ -97,7 +97,7 @@ exports.addRating = (req, res) => {
       const newRatings = [...book.ratings, newRating];
 
       const total = newRatings.reduce((acc, curr) => acc + curr.grade, 0);
-      const averageRating = total / newRatings.length;
+      const averageRating = Math.round(total / newRatings.length);
 
       Book.updateOne(
         { _id: req.params.id },

@@ -75,6 +75,11 @@ function SignIn({ setUser }) {
           error: true,
           message: 'Veuillez entrer une adresse email valide',
         });
+      } else if (err.response && err.response.status === 409) {
+        setNotification({
+          error: true,
+          message: 'Adresse déjà utilisée',
+        });
       } else {
         setNotification({ error: true, message: err.message });
       }

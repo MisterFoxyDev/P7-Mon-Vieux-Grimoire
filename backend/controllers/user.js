@@ -2,7 +2,15 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+const validateEmail = (email) => {
+  const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return regex.test(email);
+};
+
 exports.signup = (req, res) => {
+  if (!validateEmail(req.body.email)) {
+    return res.status(400).json({ message: "Adresse email invalide." });
+  }
   bcrypt
     .hash(req.body.password, 10)
     .then((hash) => {
@@ -13,7 +21,7 @@ exports.signup = (req, res) => {
       user
         .save()
         .then(() => res.status(201).json({ message: "Utilisateur créé !" }))
-        .catch((err) => res.status(400).json({ err }));
+        .catch((err) => res.status(500).json({ err }));
     })
     .catch((err) => res.status(500).json({ err }));
 };

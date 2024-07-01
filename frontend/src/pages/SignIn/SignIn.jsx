@@ -58,7 +58,6 @@ function SignIn({ setUser }) {
           password,
         },
       });
-      console.log('Réponse de l\'inscription:', response);
       if (!response?.data) {
         console.log('Something went wrong during signing up: ', response);
         return;

@@ -1,4 +1,4 @@
-.Header{
+.Header {
     font-family: 'Libre Baskerville', serif;
     background-color: #FFFFFF;
     min-height: 91px;
@@ -26,11 +26,15 @@
 
 .Header ul li a {
     text-decoration: none;
-    color: black ;
+    color: black;
 }
 
 .Header a.activeLink {
     font-weight: bold;
+}
+
+.disconnectBtn {
+    cursor: pointer;
 }
 
 @media all and (max-width: 600px) {

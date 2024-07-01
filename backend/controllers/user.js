@@ -11,19 +11,29 @@ exports.signup = (req, res) => {
   if (!validateEmail(req.body.email)) {
     return res.status(400).json({ message: "Adresse email invalide." });
   }
-  bcrypt
-    .hash(req.body.password, 10)
-    .then((hash) => {
-      const user = new User({
-        email: req.body.email,
-        password: hash,
-      });
-      user
-        .save()
-        .then(() => res.status(201).json({ message: "Utilisateur créé !" }))
-        .catch((err) => res.status(500).json({ err }));
+  // Vérifier si l'utilisateur existe déjà
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      if (user) {
+        // Si l'utilisateur existe déjà, renvoyer un code 409 (Conflit)
+        return res.status(409).json({ message: "L'utilisateur existe déjà." });
+      }
+      // Si l'utilisateur n'existe pas, procéder à la création
+      bcrypt
+        .hash(req.body.password, 10)
+        .then(hash => {
+          const newUser = new User({
+            email: req.body.email,
+            password: hash,
+          });
+          newUser
+            .save()
+            .then(() => res.status(201).json({ message: "Utilisateur créé !" }))
+            .catch(err => res.status(500).json({ err }));
+        })
+        .catch(err => res.status(500).json({ err }));
     })
-    .catch((err) => res.status(500).json({ err }));
+    .catch(err => res.status(500).json({ err }));
 };
 
 exports.login = (req, res) => {

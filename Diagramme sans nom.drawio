@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net" modified="2024-07-04T23:09:24.309Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="laG-XzbK7ZJy7QYBQfrb" border="50" scale="3" compressed="false" locked="false" version="24.6.4" type="github">
+  <diagram name="Blank" id="YmL12bMKpDGza6XwsDPr">
+    <mxGraphModel dx="1434" dy="738" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="1" shadow="0">
+      <root>
+        <mxCell id="X5NqExCQtvZxIxQ7pmgY-0" />
+        <mxCell id="1" parent="X5NqExCQtvZxIxQ7pmgY-0" />
+        <mxCell id="NjAqU9Y5rHBkyYTPuW-a-1" value="Git Process Bar" style="swimlane;fontStyle=2;childLayout=stackLayout;horizontal=1;startSize=20;fillColor=none;horizontalStack=1;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;swimlaneFillColor=none;strokeColor=none;fontFamily=Helvetica;fontSize=14;fontColor=#BABABA;points=[];verticalAlign=middle;stackBorder=10;stackSpacing=-10;resizable=1;" parent="1" vertex="1">
+          <mxGeometry x="96" y="105" width="646" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NjAqU9Y5rHBkyYTPuW-a-2" value="Répertoire de travail" style="shape=step;perimeter=stepPerimeter;strokeColor=#6C8EBF;fontFamily=Helvetica;fontSize=14;fontColor=#6C8EBF;fillColor=#dae8fc;fixedSize=1;size=17;fontStyle=1;strokeWidth=2;spacingTop=0;points=[];" parent="NjAqU9Y5rHBkyYTPuW-a-1" vertex="1">
+          <mxGeometry x="10" y="30" width="204" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NjAqU9Y5rHBkyYTPuW-a-3" value="Stage&#xa;(après add)" style="shape=step;perimeter=stepPerimeter;strokeColor=#82B366;fontFamily=Helvetica;fontSize=14;fontColor=#82B366;fillColor=#d5e8d4;fixedSize=1;size=17;fontStyle=1;strokeWidth=2;spacingTop=0;points=[];" parent="NjAqU9Y5rHBkyYTPuW-a-1" vertex="1">
+          <mxGeometry x="204" y="30" width="118" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NjAqU9Y5rHBkyYTPuW-a-4" value="Dépôt local&#xa;(après commit)" style="shape=step;perimeter=stepPerimeter;strokeColor=#D6B656;fontFamily=Helvetica;fontSize=14;fontColor=#D6B656;fillColor=#fff2cc;fixedSize=1;size=17;fontStyle=1;strokeWidth=2;spacingTop=0;points=[];" parent="NjAqU9Y5rHBkyYTPuW-a-1" vertex="1">
+          <mxGeometry x="312" y="30" width="157" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NjAqU9Y5rHBkyYTPuW-a-5" value="Dépôt distant&#xa;(après push)" style="shape=step;perimeter=stepPerimeter;strokeColor=#B85450;fontFamily=Helvetica;fontSize=14;fontColor=#B85450;fillColor=#f8cecc;fixedSize=1;size=17;fontStyle=1;strokeWidth=2;spacingTop=0;points=[];" parent="NjAqU9Y5rHBkyYTPuW-a-1" vertex="1">
+          <mxGeometry x="459" y="30" width="177" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-1" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="NjAqU9Y5rHBkyYTPuW-a-2" target="7nDp3JqMKDNr_wBKvY1S-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="242" as="sourcePoint" />
+            <mxPoint x="157" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-2" value="git &lt;font color=&quot;#cc0000&quot;&gt;restore &lt;/font&gt;&amp;lt;fichier&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="29" y="277" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-3" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="NjAqU9Y5rHBkyYTPuW-a-3" target="7nDp3JqMKDNr_wBKvY1S-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="387" y="405" as="sourcePoint" />
+            <mxPoint x="437" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-4" value="git &lt;font color=&quot;#cc0000&quot;&gt;restore &lt;/font&gt;--staged&amp;nbsp; &amp;lt;fichier&amp;gt;&lt;div&gt;+&lt;/div&gt;&lt;div&gt;git &lt;font color=&quot;#cc0000&quot;&gt;restore &lt;/font&gt;&amp;lt;fichier&amp;gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="172" y="277" width="176" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-6" value="git &lt;font color=&quot;#cc0000&quot;&gt;revert &lt;/font&gt;&amp;lt;commit&amp;gt; OU git &lt;font color=&quot;#cc0000&quot;&gt;reset &lt;/font&gt;&amp;lt;commit&amp;gt;&lt;div&gt;(selon le besoin de conserver ou supprimer l&#39;historisation)&lt;/div&gt;&lt;div&gt;git &lt;font color=&quot;#cc0000&quot;&gt;revert &lt;/font&gt;n&#39;annule que le commit pointé et en crée un autre&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="373" y="262.5" width="264" height="89" as="geometry" />
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-8" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="NjAqU9Y5rHBkyYTPuW-a-4" target="7nDp3JqMKDNr_wBKvY1S-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="387" y="405" as="sourcePoint" />
+            <mxPoint x="437" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-9" value="git &lt;font color=&quot;#cc0000&quot;&gt;revert &lt;/font&gt;+ git push OU git &lt;font color=&quot;#cc0000&quot;&gt;reset &lt;/font&gt;+ git push --force" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="662" y="277" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-10" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="NjAqU9Y5rHBkyYTPuW-a-5" target="7nDp3JqMKDNr_wBKvY1S-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="458" y="505" as="sourcePoint" />
+            <mxPoint x="508" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-11" value="" style="endArrow=none;dashed=1;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="362" y="381" as="sourcePoint" />
+            <mxPoint x="360" y="233" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-12" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.markup.curlyBrace;whiteSpace=wrap;strokeColor=#999999;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="110" y="337" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-13" value="RESTORE" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="98" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-14" value="REVERT OU RESET" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="592" y="379" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-15" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;strokeWidth=1;shape=mxgraph.mockup.markup.curlyBrace;whiteSpace=wrap;strokeColor=#999999;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="602" y="357" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7nDp3JqMKDNr_wBKvY1S-17" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;MEMO&lt;/span&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400; background-color: initial;&quot;&gt;--&amp;gt; git reset --soft = ne modifie que le dépôt local, conserve&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-weight: 400; background-color: initial;&quot;&gt;le stage et le répertoire de travail.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-weight: 400; font-size: 14px;&quot;&gt;--&amp;gt; git reset --mixed (default) = modifie le dépôt local et le stage, conserve le répertoire de travail.&lt;/div&gt;&lt;div style=&quot;font-weight: 400; font-size: 14px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;--&amp;gt; git reset --hard =&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;modifie le dépôt local, le stage et le répertoire de travail.&lt;/span&gt;&lt;/div&gt;&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="69" y="491" width="743" height="134" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

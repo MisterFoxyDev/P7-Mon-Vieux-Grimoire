@@ -30,7 +30,7 @@ const resizeAndCompressImage = (req, res, next) => {
   req.file.filename = `${Date.now()}.${extension}`;
 
   sharp(req.file.buffer)
-    .resize(404, 568, {
+    .resize(404, 536, {
       fit: sharp.fit.inside,
       withoutEnlargement: false,
     })
